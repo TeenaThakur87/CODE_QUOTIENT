@@ -1,0 +1,33 @@
+java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main{
+  public static void isArmstrong(int n){
+    int num=n;
+    int count=0;
+    int arm=0;
+    while(num>0){
+      num=num/10;
+      count++;
+    }
+    num=n;
+    while(num>0){
+      int i=num%10;
+      arm+=Math.pow(i,count);
+      num=num/10;
+    }
+    if(n==arm){
+      System.out.println("yes");
+        
+    }
+    else{
+      System.out.println("no");
+    }
+  }
+    public static void main(String[] args)
+    {
+	Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      isArmstrong(n);
+    }
+}
