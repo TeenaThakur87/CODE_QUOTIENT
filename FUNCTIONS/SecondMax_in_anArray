@@ -1,0 +1,44 @@
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main{
+  static int max(int a[]){
+    int m=a[0];
+    for(int i=1;i<a.length;i++){
+      m=Math.max(a[i],m);
+    }
+    return m;
+  }
+  
+  static int secondMax(int a[],int k){
+        int m=a[0];
+    for(int i=1;i<a.length;i++){
+	if(a[i]>m && a[i]<k){
+      m=a[i];
+    }
+    }
+    return m;
+  }
+    public static void main(String[] args)
+    {
+	Scanner sc=new Scanner(System.in);
+      int l=sc.nextInt();
+      int a[]=new int[l];
+      boolean r=true;
+      for(int i=0;i<l;i++){
+        a[i]=sc.nextInt();
+      }    
+      for(int i=0;i<a.length-1;i++){
+        if(a[i]!=a[i+1]){
+          r=false;
+        }
+      }
+      if(r){
+        System.out.println(0);
+      }
+      else{
+      int k=max(a);
+      System.out.println(secondMax(a,k));
+    }
+   }
+}
